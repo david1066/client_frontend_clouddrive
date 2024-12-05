@@ -1,0 +1,109 @@
+.container{
+    margin: 0px;
+    width: 95%;
+}
+
+.title{
+    /*border-bottom: 3px solid var(--greenone);*/
+    width: 90%;
+}
+
+.title h6 {
+    color: var(--greenone);
+    font-weight: bold;
+    font-size: x-large;
+}
+
+
+
+.btn {
+    width: auto;
+    background-color: var(--greenone);
+    margin: 6px 0;
+    padding: 2px 20px;
+    color: white;
+    border-radius: 10px;
+    margin: 17px 0;
+}
+
+.icon-menu{
+    color: var(--greenone);
+}
+
+table {
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+    width: 95%;
+}
+
+td {
+    text-align: center;
+    padding: 8px;
+}
+
+
+.title-table td{
+    background-color:  var(--greenone);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.acciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.acciones p {
+    margin: 0 10px 0 10px
+}
+
+.acciones button {
+    background: transparent;
+    border: 0px ;
+}
+table {
+    width: 100%;
+    margin: 0 auto; /* Centra la tabla horizontalmente */
+    border-collapse: collapse;
+    table-layout: fixed; /* Asegura que las columnas tengan el mismo ancho */
+}
+
+
+
+table th, table td {
+   
+    padding: 8px;
+    width: 25%; /* Ajusta este valor si tienes más o menos columnas */
+    text-align: left;
+    font-size: 20px;
+
+}
+
+table th {
+  
+    color: black;
+}
+
+mat-icon{
+    font-size: 35px;
+    padding:10px;
+    
+    height: 54px!important;
+    width: 54px!important;
+
+}
+
+
+a{
+    cursor: pointer;
+}

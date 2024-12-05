@@ -1,0 +1,62 @@
+@if(!register){
+<div class="bg">
+    <form class="form" (ngSubmit)="login()">
+
+        <h1>Inicia sesión</h1>
+        <input [(ngModel)]="email" name="email" placeholder="Ingrese su usuario" required>
+
+        <input [(ngModel)]="password" name="password" type="password" placeholder="Ingrese su contraseña" required>
+        @if(two_factor_codev){
+            <input [(ngModel)]="two_factor_code" name="two_factor_code" type="nunber" placeholder="Ingrese el codigo de verificacion" required>
+
+        }
+       
+        <button class="btn" type="submit">Ingresar</button>
+
+        <a class="btn " (click)="registerF(true)" type="submit">Registrese</a>
+    </form>
+</div>
+}
+@if(register){
+<div class="bg">
+
+    <form class="form" [formGroup]="registerForm"  (ngSubmit)="registerSubmit(registerForm.value)">
+
+        <h1 class="text-center ">Registro</h1>
+       
+          <div class="row">
+            <div class="col-md-6 mb-2">
+              <label for="name" class="form-label">Nombre</label>
+              <input formControlName="name" id="name" name="name" class="form-control" placeholder="Ingrese su nombre" required>
+            </div>
+            <div class="col-md-6 mb-2">
+              <label for="last_name" class="form-label">Apellido</label>
+              <input formControlName="last_name" id="last_name" name="last_name" class="form-control" placeholder="Ingrese su apellido" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-2">
+              <label for="email" class="form-label">Correo Electrónico</label>
+              <input formControlName="email" id="email" name="email" type="email" class="form-control" placeholder="Ingrese su correo" required>
+            </div>
+            <div class="col-md-6 mb-2">
+              <label for="password" class="form-label">Contraseña</label>
+              <input formControlName="password" id="password" name="password" type="password" class="form-control" placeholder="Ingrese su contraseña" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 mb-2">
+              <label for="password_confirmation" class="form-label">Confirmar Contraseña</label>
+              <input formControlName="password_confirmation" id="password_confirmation" name="password_confirmation" type="password" class="form-control" placeholder="Confirme su contraseña" required>
+            </div>
+          
+          </div>
+        
+            <button class="btn" type="submit">Registrarse</button>
+          
+      
+
+
+    </form>
+</div>
+}

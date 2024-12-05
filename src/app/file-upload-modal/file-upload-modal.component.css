@@ -1,0 +1,71 @@
+.container{
+    padding: 2rem;
+  }
+  
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+  
+  .content-body{
+    margin-top: 20px;
+  }
+  
+  .title{
+      border-bottom: 1px solid var(--greenone);
+      width: 100%;
+  }
+  
+  .title h6 {
+      color: var(--greenone);
+      font-weight: bold;
+      font-size: x-large;
+  }
+  
+  .btn {
+      width: auto;
+      background-color: var(--greenone);
+      margin: 6px 0;
+      padding: 2px 25px;
+      color: white;
+      border-radius: 10px;
+      margin: 17px 0;
+  }
+  
+  label{
+      color: var(--greenone);
+  }
+  
+  span{
+    color: var(--greenone);
+    margin-right: 5px;
+  }
+  
+  .autocomplete-list {
+      position: absolute;
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 10px;
+      z-index: 1;
+      cursor: pointer;
+  }
+    
+  .autocomplete-list li {
+      padding: 10px;
+      list-style: none;
+  }
+    
+  .autocomplete-list li:hover {
+      background-color: lightgray;
+  }
+    
+  .close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+  }
