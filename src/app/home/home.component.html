@@ -1,0 +1,42 @@
+
+    <div class="container">
+        <div class="title">
+            <h6>Archivos</h6>
+        </div>
+        <!-- Botones para crear un contacto o mostrar un mensaje de error si no tiene permiso -->
+        
+     
+        <!-- Tabla de contactos -->       
+        <div>
+            @if(files.length === 0){
+                <p class="text-center">No hay registros para los parámetros de búsqueda...</p>
+            }@else{ 
+                 <table>
+                    <thead>
+                        <tr class="title-table">
+                            <td>Nombre</td>
+                            <td>Fecha de cargue</td>
+                            <td>Tipo de archivo</td>
+                            <td>Acciones</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @for (file of files ; track file.id){
+                    <tr>
+                        <td>{{file.name }}</td>
+                        <td>{{file.file_metadata.last_modified}}</td>
+                        <td>{{file.file_metadata.mime_type}}</td>
+                        <td>
+                           <a (click)="getDownloadFile(file.s3_name)"> <mat-icon style="color: green;">download</mat-icon></a>
+                           <a (click)="deleteFile(file.s3_name)"> <mat-icon style="color: red;">delete</mat-icon></a>
+                        </td>  
+                    </tr>
+                    }
+                    </tbody>
+                </table> 
+                <!-- Paginación -->
+                
+            } 
+        </div>
+        
+    </div>
