@@ -4,23 +4,40 @@ import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './login/login.component';
 import { HttpsRedirectService } from './services/https-redirect.service';
 import { AuthenticationService } from './services/authentication.service';
+import { FileUploadModalComponent } from './file-upload-modal/file-upload-modal.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { FileService } from './services/files.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterLink, RouterOutlet, MatIconModule, LoginComponent],
+  imports: [ RouterOutlet, MatIconModule, LoginComponent,MatDialogModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   isLoggedIn: boolean = false;
-
   title = 'client_cloud_drive';
   name ='';
   last_name='';
-
+ 
   
-  constructor(private httpsRedirectService: HttpsRedirectService, private router: Router, private authenticationService: AuthenticationService) {
+   openFileUploadModal() {
+     const dialogRef = this.dialog.open(FileUploadModalComponent, {
+       width: '500px',
+       data: { 
+        
+       }
+     });
+   
+     dialogRef.afterClosed().subscribe(result => {
+       if (result) {
+       
+     
+       }
+     });
+   }
+  constructor(private dialog: MatDialog,private httpsRedirectService: HttpsRedirectService, private router: Router, private authenticationService: AuthenticationService) {
 
     // Verifica si el usuario está logueado
     if (this.authenticationService.checkLogin()) {

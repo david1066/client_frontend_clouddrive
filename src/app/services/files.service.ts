@@ -24,6 +24,11 @@ export class FileService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${this.authenticationService.getToken()}`).set('Content-Type', 'application/json');
     return this.http.get(this.apiUrl+'/'+filename, { headers,responseType: 'blob' });
   }
+  postFile(formData:any){
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.authenticationService.getToken()}`);
+
+    return this.http.post(this.apiUrl, formData,{headers});
+  }
 
   
   deleteFile(filename:string): Observable<any> {

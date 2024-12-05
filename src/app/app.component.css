@@ -47,6 +47,7 @@ main{
     color: var(--greenone);
     padding-top: 2px;
     font-size: x-large;
+   
 }
 
 .user p{
@@ -113,7 +114,7 @@ main{
 .position-absolute{
 display: flex;
  justify-content: end;
- padding-top: 5px;
+
 
 }
 
@@ -121,7 +122,29 @@ display: flex;
     width: 25px; 
     margin-right: 5px;
 }
-
+.round-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px; /* Ajusta el tamaño según tus necesidades */
+    height: 60px; /* Asegúrate de que el ancho y el alto sean iguales para hacer un círculo */
+    border-radius: 50%!important; /* Esto hace que el botón sea redondo */
+    background-color: white; /* Color de fondo, puedes cambiarlo al color que prefieras */
+    color: white; /* Color del ícono */
+    text-decoration: none; /* Elimina subrayado de enlaces */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border: none; /* Elimina el borde por defecto */
+    }
+    
+    .round-button .icon-menu {
+        font-size: 37px;
+        width: 34px;
+        height: 34px;
+    }
+    
+    .round-button:hover {
+        background: #ECECEC; /* Color de fondo al pasar el mouse por encima */
+    }
 @media (max-width: 1060px) {
     .contenido{
         display: grid;
@@ -166,11 +189,15 @@ display: flex;
 
     .nav-item span {
         display: none;
+        font-size: 40px;
+    }
+    a{
+        font-size: 50px!important;
     }
 
     .icon-menu{
         font-size: 25px;
-        margin-right: 0px;
+     
     }
 
     .icon{
