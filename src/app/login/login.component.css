@@ -1,14 +1,14 @@
-.bg{
+.bg {
     width: 100%;
     height: 100%;
-    background-image: url("../../assets/bg.png"); 
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(135deg, #4CAF50 0%, #81C784 100%);
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
-
+h1{
+    color: white;
+}
 ::placeholder {
     color: var(--greentwo);
   }

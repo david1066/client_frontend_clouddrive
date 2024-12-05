@@ -14,6 +14,7 @@ import { environment } from '../../environments/environment';
 })
 export class AuthenticationService {
   private apiUrl = environment.apiUrl + '/api/login';
+  private api = environment.apiUrl ;
   private inactivityTimeout: number = 15 * 60 * 1000; 
   private timerSubscription: Subscription | null = null;
 
@@ -52,8 +53,13 @@ export class AuthenticationService {
   }
 
   //Autenticación inicio sesion
-  login(email: string, password: string): Observable<any> {
-    const credentials = { email, password };
+  login(email: string, password: string, two_factor_code=null): Observable<any> {
+    let credentials = { email: email, password: password ,two_factor_code:two_factor_code};
+
+   
+    
+    console.log(credentials);
+    
     return this.http.post(this.apiUrl, credentials).pipe(
       tap((response: any) => {
         
@@ -61,11 +67,15 @@ export class AuthenticationService {
         const user = response._user;
         const expirationDate = new Date(Date.now() + 3600000);
         
-
-        sessionStorage.setItem('token', token);
-        sessionStorage.setItem('tokenExpiration', expirationDate.toISOString());
-        sessionStorage.setItem('user', JSON.stringify(user));
+          
+            
+      
         if(token != undefined){
+
+          sessionStorage.setItem('token', token);
+          sessionStorage.setItem('tokenExpiration', expirationDate.toISOString());
+          sessionStorage.setItem('user', JSON.stringify(user));
+        
           this.isLoggedIn.next(true);
           this.loginSuccess.next();
           this.verifyToken();
@@ -73,6 +83,10 @@ export class AuthenticationService {
 
       })
     );
+  }
+  register(data:any){
+ 
+    return this.http.post(this.api+ '/api/register', data);
   }
 
   //cerrar sesion
