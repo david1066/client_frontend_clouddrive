@@ -1,0 +1,11 @@
+<div class="bg">
+    <form class="form" (ngSubmit)="login()">
+
+           <h1>Inicia sesión</h1>
+            <input [(ngModel)]="email" name="email" placeholder="Ingrese su usuario" required>
+        
+            <input [(ngModel)]="password" name="password" type="password" placeholder="Ingrese su contraseña" required>
+        
+            <button class="btn" type="submit">Ingresar</button>
+    </form>
+</div>
