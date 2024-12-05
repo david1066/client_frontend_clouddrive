@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+
+
+:root {
+    --greenone: #119C3C;
+    --greentwo: #005924;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+body{
+    background-color: lightgrey;
+}
+
+a, p, h1, h2, h3, h4, h5, h6 {
+    font-family:"Open Sans", sans-serif;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

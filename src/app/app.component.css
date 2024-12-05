@@ -1,0 +1,186 @@
+main{
+    width: 100%;
+}
+
+.contenido{
+    display: grid;
+    grid-template-columns: 20% 81%;
+    column-gap: 10px;
+
+}
+
+.lateral{
+    min-width: 100px ;
+    min-height: 93vh ;
+    padding: 0 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header{
+    background-color: var(--greenone);
+    width: 100%;
+    height: 40px;
+}
+
+.content-right{
+    padding: 0;
+    margin: 0;
+}
+
+.user{
+    margin: 20px 0;
+    padding: 8px 9px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user h6{
+    color: var(--greentwo);
+    font-weight: bolder;
+    padding-top: 2px;
+    font-size: larger;
+}
+
+.user mat-icon{
+    color: var(--greenone);
+    padding-top: 2px;
+    font-size: x-large;
+}
+
+.user p{
+    color: var(--greenone);
+    font-size: large;
+}
+
+.menu a{
+    text-decoration: none;
+    color: var(--greentwo);
+    padding: 10px;
+    
+}
+
+.button{
+    background: black;
+    width: auto;
+}
+
+.menu a{
+    border-radius: 15px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+}
+
+
+.menu a:hover{
+    background: #ECECEC;
+}
+
+.active {
+    background: #ECECEC;
+    cursor: pointer;
+  }
+
+.icon-menu{
+    color: var(--greenone);
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.image-container{
+    padding: 30px 3px;
+    border-bottom: 3px solid var(--greentwo);
+}
+
+.image{
+    width: 100%;
+    height: auto;
+}
+
+.separator{
+    color: #D3D800;;
+}
+
+.user{
+    max-width: 242px;
+}
+
+.username {
+    display: inline-block;
+}
+
+.initial {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    background-color: var(--greenone);
+    text-align: center;
+    padding-top: 5px;
+    font-size: 2vw;
+    font-weight: bold;
+    color: #fff;
+    display: none; 
+}
+
+.icon{
+    width: 25px; 
+    margin-right: 5px;
+}
+
+@media (max-width: 1060px) {
+    .contenido{
+        display: grid;
+        grid-template-columns: 10% 90%;
+        column-gap: 1%;
+    }
+
+    .image-container img {
+        /*content: url('../assets/grupo_egs_logo2.png');*/
+        width: 100%;
+    }
+
+    .user {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .username h6 {
+        display: none; 
+    }
+
+    .initial {
+        display: inline-block; 
+    }
+
+    .username-icon{
+        display: none;
+    }
+    
+    .separator{
+        display: none;
+    }
+
+    .role {
+        display: none;
+    }
+
+    .menu a{
+        justify-content: center;
+    }
+
+    .nav-item span {
+        display: none;
+    }
+
+    .icon-menu{
+        font-size: 25px;
+        margin-right: 0px;
+    }
+
+    .icon{
+        width: 30px;
+    }
+}
