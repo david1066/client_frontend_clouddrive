@@ -110,18 +110,11 @@ main{
 .username {
     display: inline-block;
 }
+.position-absolute{
+display: flex;
+ justify-content: end;
+ padding-top: 5px;
 
-.initial {
-    width: 4vw;
-    height: 4vw;
-    border-radius: 50%;
-    background-color: var(--greenone);
-    text-align: center;
-    padding-top: 5px;
-    font-size: 2vw;
-    font-weight: bold;
-    color: #fff;
-    display: none; 
 }
 
 .icon{
@@ -132,7 +125,7 @@ main{
 @media (max-width: 1060px) {
     .contenido{
         display: grid;
-        grid-template-columns: 10% 90%;
+        grid-template-columns: 5% 90%;
         column-gap: 1%;
     }
 

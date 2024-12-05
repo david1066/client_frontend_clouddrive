@@ -1,50 +1,49 @@
 <!-- Mostrar la página de inicio de sesión si el usuario no está logueado -->
 @if(!isLoggedIn){
-  <app-login></app-login>
+<app-login></app-login>
 }
 
 <!-- Mostrar la interfaz de usuario si el usuario está logueado -->
 @if (isLoggedIn) {
-  <div class="back-grey d-flex flex-column wrapper">
-    <!-- Header con botón de cierre de sesión -->
-    <header class="header">
-      <div class="position-absolute end-0 p-2">
-        <a href="#" (click)="logout()">
-          <mat-icon style="color: white;">logout</mat-icon>
-        </a>
-      </div>
-    </header>
-    
-    <main class="row contenido">
+<div style="border-right: 2px;border-color: aqua;" class="back-grey d-flex flex-column wrapper">
+  <!-- Header con botón de cierre de sesión -->
+  <header class="header">
+    <div class="position-absolute end-0 p-4">
+      <a href="#" (click)="logout()">
+        <mat-icon style="color: white;">logout</mat-icon>
+      </a>
+    </div>
+  </header>
 
-        <!-- Menú lateral -->
-        <div class="bg-light lateral">
-          <div>
-            <div class="image-container">
-              <img src="../assets/clouddrive.png" alt="Logo Cloud Drive" class="image"> 
-            </div>
-           <div class="user">
-              <mat-icon class="username-icon">person</mat-icon>
-              <div class="username">
-                <span class="initial">{{ name.charAt(0).toUpperCase() }}</span>
-                <h6>{{ last_name }}</h6>
-              </div>
-              <span class="separator">|</span>
-             
-            </div>
-            <div class="d-flex flex-column menu">
-              <!-- Navegación -->
-              
-              <a class="nav-item" routerLink="/organizations" routerLinkActive="active">  <mat-icon class="icon-menu">apartment</mat-icon> <span> Organizaciones </span></a>
-              
-           
-            </div>
+  <main class="row contenido">
+
+    <!-- Menú lateral -->
+    <div class="bg-light lateral">
+      <div>
+
+        <div class="user">
+
+          <div class="username">
+            <h6>{{ name.charAt(0).toUpperCase() +name.slice(1).toLowerCase()+" "+ last_name.charAt(0).toUpperCase()
+              +last_name.slice(1).toLowerCase()}}</h6>
           </div>
+          <span class="separator">|</span>
+
         </div>
-        <div class="content-right bg-light">
-            <!-- Router outlet para mostrar los componentes -->
-            <router-outlet></router-outlet>
+        <div class="d-flex flex-column menu">
+          <!-- Navegación -->
+
+          <a class="nav-item" routerLink="/edit-user" routerLinkActive="active"> 
+            <mat-icon style="font-size: 45px;padding: 30px;" class="icon-menu">add</mat-icon> <span style="font-size: 20px;margin-top: 20px;">Archivos</span></a>
+
+
         </div>
-    </main>
-  </div>
+      </div>
+    </div>
+    <div class="content-right bg-light">
+      <!-- Router outlet para mostrar los componentes -->
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
 }
