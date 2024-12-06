@@ -61,9 +61,14 @@ export class LoginComponent {
             title: 'Error',
             text: 'Verifique la contraseña',
             icon: 'error',
-          });
-        
-        }else{
+          })}else if(error.error.message.includes('validation.unique')){
+            Swal.fire({
+              title: 'Error',
+              text: 'El correo ya se encuentra registado, por favor intente con otro',
+              icon: 'error',
+            });
+          
+          }else{
           Swal.fire({
             title: 'Error',
             text: 'Verifique la información suministrada y recuerde que todos los datos son obligatorios',
