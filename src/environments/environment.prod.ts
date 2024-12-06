@@ -1,5 +1,5 @@
 export const environment = {
-    apiUrl: '',
-    forceHttps: true,
+    apiUrl: 'http://api-cloud-drive.us-east-1.elasticbeanstalk.com',
+    forceHttps: false,
     production: true
 };
