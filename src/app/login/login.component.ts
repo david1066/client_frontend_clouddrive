@@ -91,6 +91,11 @@ export class LoginComponent {
       // Si la respuesta es exitosa, hace la validacion en app.component
           if(response.code=='201'){
             this.two_factor_codev=true;
+            Swal.fire({
+              title: 'success',
+              text: 'Le hemos enviado un codigo de autenticación, por favor revise su bandeja de entrada o spam',
+              icon: 'success',
+            });
           }
       },
       // Si ocurre un error, muestra un mensaje de error
